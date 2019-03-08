@@ -13,15 +13,22 @@ const reducer = (state = initialState, action) => {
 
         case 'REMOVE':
             let newState = [...state.mylist];
+            let newRecomm = [...state.recommendations];
             newState = newState.filter(item => item.id !== action.payload);
+            let selectedEle = state.mylist.filter(item => item.id === action.payload)[0];
+            // console.log(selectedEle);
+            // console.log(newState);
+            newRecomm.push(selectedEle);
+            console.log(newRecomm);
             return {
                 ...state,
-                'mylist': newState
+                'mylist': newState,
+                'recommendations': newRecomm
             }
         case 'ADD':
             newState = [...state.mylist];
             
-            let newRecomm = [...state.recommendations];
+            newRecomm = [...state.recommendations];
             // console.log(newState);
             let selectedItem = state.recommendations.filter(item => item.id === action.payload)[0];
             newState.push(selectedItem);

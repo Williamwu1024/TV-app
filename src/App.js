@@ -20,13 +20,11 @@ class App extends Component {
     return (
       <>
         <header>
-              <img className='label' src={image} alt='Netflex'/>
+          <img className='label' src={image} alt='Netflex'/>
         </header>
         <div className='layout'>
-
           <MyList />
           <Recommendation />
-                
         </div>
       </>
     );
