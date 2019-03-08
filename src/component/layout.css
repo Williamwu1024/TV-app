@@ -1,0 +1,28 @@
+.container{
+    width: 80%;
+    margin: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.item{
+    margin: 10px;
+}
+
+.btn {
+    display: none;
+}
+
+.item:hover .btn{
+    display: block;
+    text-align: center;
+}
+
+
+.text{
+    text-align: center;
+}
