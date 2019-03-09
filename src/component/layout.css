@@ -7,6 +7,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
+    margin: 10px;
 }
 
 .item{
@@ -14,11 +15,11 @@
 }
 
 .btn {
-    display: none;
+    visibility:hidden
 }
 
 .item:hover .btn{
-    display: block;
+    visibility:visible;
     text-align: center;
 }
 

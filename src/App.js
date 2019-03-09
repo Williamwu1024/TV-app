@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import MyList from './component/MyList';
-import Recommendation from './component/Recommendation';
+import MyLR from './component/MyLR';
 import image from './image/netflix-logo.jpg';
 import { connect } from "react-redux";
 import './App.css';
@@ -23,8 +22,8 @@ class App extends Component {
           <img className='label' src={image} alt='Netflex'/>
         </header>
         <div className='layout'>
-          <MyList />
-          <Recommendation />
+          <MyLR select='MyList'/>
+          <MyLR select='Recommendations'/>
         </div>
       </>
     );
