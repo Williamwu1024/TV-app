@@ -29,6 +29,7 @@ class Mylist extends Component {
             btn = (thisitem) => this.props.add(thisitem);
             button = 'Add';
         };
+        console.log(selectedItem);
         return(
             <div className='container'>                
                 <div className='text'>{title}</div>

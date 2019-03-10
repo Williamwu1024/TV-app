@@ -13,7 +13,7 @@ class App extends Component {
     fetch('./data.json')
     .then(res => res.json())
     .then(res => this.props.Initial(res))
- }
+ }  
 
   render() {
     return (

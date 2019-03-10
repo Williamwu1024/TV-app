@@ -3,7 +3,8 @@ const initialState = {
     'recommendations':[]
 };
 
-
+const addElement = (beadd, del, selectedID) => beadd.concat(del.filter(item => item.id === selectedID)[0]);
+const delElement = (del, selectedID) => del.filter(item => item.id !== selectedID);
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -11,28 +12,18 @@ const reducer = (state = initialState, action) => {
             return action.payload
 
         case 'REMOVE':
-            let newState = [...state.mylist];
-            let newRecomm = [...state.recommendations];
-            newState = newState.filter(item => item.id !== action.payload);
-            let selectedEle = state.mylist.filter(item => item.id === action.payload)[0];
-            newRecomm.push(selectedEle);
+            console.log(action.payload);
             return {
                 ...state,
-                'mylist': newState,
-                'recommendations': newRecomm
+                'mylist': delElement(state.mylist, action.payload),
+                'recommendations': addElement(state.recommendations,state.mylist,action.payload)
             }
         case 'ADD':
-            newState = [...state.mylist];
-            newRecomm = [...state.recommendations];
-            let selectedItem = state.recommendations.filter(item => item.id === action.payload)[0];
-            newState.push(selectedItem);
-            newRecomm = newRecomm.filter(item => item.id !== action.payload);
             return {
                 ...state,
-                'mylist': newState,
-                'recommendations': newRecomm
+                'mylist': addElement(state.mylist, state.recommendations, action.payload),
+                'recommendations': delElement(state.recommendations, action.payload)
             }
-
 
             default:
             return state
