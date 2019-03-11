@@ -12,6 +12,9 @@ class Mylist extends Component {
         };
     }
 
+    
+
+
     render(){
         let title = null,
             selectedItem = [],
@@ -31,7 +34,7 @@ class Mylist extends Component {
         };
         console.log(selectedItem);
         return(
-            <div className='container'>                
+            <div className='container'>             
                 <div className='text'>{title}</div>
                 <div className='row'>
                     {selectedItem.map((list)=>{
@@ -42,7 +45,7 @@ class Mylist extends Component {
                                 <div className='btn'>
                                     <button onClick={() => btn(list.id)}>{button}</button>
                                 </div>
-                                <div className='text'>{list.title}</div>
+                                <div className='texttitle'>{list.title}</div>
                                 
                             </div>)
                     })}
